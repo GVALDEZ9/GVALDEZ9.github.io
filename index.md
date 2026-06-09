@@ -116,11 +116,6 @@ summary:hover {
   border-top: 1px solid var(--gia-line);
   margin: 2rem 0 1.25rem;
 }
-.copy-status {
-  color: var(--gia-muted);
-  font-size: 0.92rem;
-  margin-left: 0.35rem;
-}
 @media (max-width: 760px) {
   .quick-links {
     position: static;
@@ -136,7 +131,8 @@ summary:hover {
   <a href="assets/Gia_Valdez_CV_2026.pdf">PDF CV</a>
   <a href="https://github.com/GVALDEZ9">GitHub</a>
   <a href="mailto:gvaldez9@depaul.edu">Email</a>
-  <button type="button" id="copy-email">Copy email</button>
+  <a href="#cats">My cats</a>
+  <a href="#cv-details">CV details</a>
   <button type="button" id="theme-toggle">Dark mode</button>
 </div>
 
@@ -144,7 +140,7 @@ summary:hover {
 
 I am Gia. I study how environmental contaminants shape the brain and immune system during sensitive windows of development. I am especially interested in PFAS, PCBs, microglia, sex differences, and why early exposures can keep mattering long after the exposure window has passed.
 
-I am currently finishing my M.S. in Biological Sciences at DePaul University in Dr. Margaret Bell's lab. I will be starting my Ph.D. training in Toxicology at the University of Rochester.
+I recently completed my M.S. in Biological Sciences at DePaul University. I am currently the lab manager for Dr. Margaret Bell's lab at DePaul and an incoming Toxicology Ph.D. student at the University of Rochester.
 
 <figure class="site-photo">
   <img src="assets/gia_pfas_presentation.jpg" alt="Gia Valdez with colleagues after her master's thesis defense">
@@ -158,7 +154,7 @@ I am currently finishing my M.S. in Biological Sciences at DePaul University in 
 <div class="card-grid">
   <div class="mini-card">
     <strong>Now</strong>
-    <span>Finishing my M.S. at DePaul and preparing to begin Toxicology Ph.D. training at Rochester.</span>
+    <span>Lab manager in the Bell Lab at DePaul and incoming Toxicology Ph.D. student at Rochester.</span>
   </div>
   <div class="mini-card">
     <strong>Research home</strong>
@@ -184,17 +180,17 @@ I also manage and contribute to projects examining how perinatal PCB exposure af
 
 <details open>
   <summary>Environmental exposures</summary>
-  <p>PFAS, PCBs, endocrine disrupting chemicals, and how exposure timing changes biological risk.</p>
+  <p>I am interested in contaminants that do not act like simple one time toxic insults. PFAS, PCBs, and other endocrine disrupting chemicals can interact with hormonal, immune, metabolic, and developmental systems. For me, the important question is not only whether an exposure changes an outcome, but when the exposure happens and which biological system is most vulnerable at that time.</p>
 </details>
 
 <details>
   <summary>Brain and immune signaling</summary>
-  <p>Microglia, neuroimmune signaling, adolescent inflammatory challenge, and sex differences in immune and neural outcomes.</p>
+  <p>Microglia sit at the center of a lot of questions I care about. They respond to immune challenge, shape brain development, and can behave differently depending on sex, age, and prior exposure history. I am especially interested in how environmental contaminants change the way microglia respond when the immune system is challenged later in life.</p>
 </details>
 
 <details>
   <summary>Developmental windows</summary>
-  <p>Critical windows of exposure, neuroendocrine development, and possible epigenetic or reproductive effects of contaminants.</p>
+  <p>Development is not one uniform window. Early life, adolescence, and reproductive development each have different vulnerabilities. I want to understand how exposure during one window can alter later neuroimmune or neuroendocrine responses, and whether some effects persist through epigenetic, reproductive, or long term immune mechanisms.</p>
 </details>
 
 <hr class="section-rule">
@@ -235,70 +231,65 @@ Machine learning pipelines for bryophyte specimen image classification.
 
 <hr class="section-rule">
 
-## Selected Publications And Presentations
+## A Few More Things
 
-* Gia M Valdez, Jennifer Dinh, Simone Rhodes, Margaret R Bell. Effects of acute alcohol on adolescent rat brain responses after gestational Polychlorinated Biphenyls exposure. In preparation, 2026.
+<details id="cv-details">
+  <summary>Selected publications and presentations</summary>
+  <ul>
+    <li>Gia M Valdez, Jennifer Dinh, Simone Rhodes, Margaret R Bell. Effects of acute alcohol on adolescent rat brain responses after gestational Polychlorinated Biphenyls exposure. In preparation, 2026.</li>
+    <li>Margaret R Bell, Katherine A Walker, Gia M Valdez, Carissa E Dressel. Advances and challenges in studying effects of EDCs on tissue resident macrophages in inflammation. <em>Journal of the Endocrine Society</em>, 2026. <a href="https://doi.org/10.1210/jendso/bvag044">https://doi.org/10.1210/jendso/bvag044</a></li>
+    <li>Gia M Valdez, Jemimah Ross, Lidan Zhao, Robert Sargis, Margaret R Bell. Effects of Early Life Exposure to PFAS on Adolescent Neuroimmune Activity. <em>The Toxicologist</em>, abstract submitted for 2026.</li>
+    <li>Gia M Valdez, Jennifer Dinh, Margaret R Bell. Gestational exposure to polychlorinated biphenyls alters adolescent neuroimmune responses to ethanol challenge in the limbic system. <em>The Toxicologist</em>, Abstract 4654, 2025.</li>
+    <li>Gia M Valdez, Jemimah N Ross, Carissa E Dressel, Margaret R Bell. Effects of early life environmental contaminant exposure on hypothalamic responses to acute alcohol challenge in adolescence. Society for Neuroscience, 2024.</li>
+  </ul>
+</details>
 
-* Margaret R Bell, Katherine A Walker, Gia M Valdez, Carissa E Dressel. Advances and challenges in studying effects of EDCs on tissue resident macrophages in inflammation. *Journal of the Endocrine Society*, 2026. [https://doi.org/10.1210/jendso/bvag044](https://doi.org/10.1210/jendso/bvag044)
+<details>
+  <summary>Teaching and mentorship</summary>
+  <p>At DePaul, I have taught and supported students in genetics, cell biology, physiology, anatomy, and summer research programming. I have also mentored undergraduate researchers through projects involving data interpretation, Python and R model outputs, and scientific presentations.</p>
+</details>
 
-* Gia M Valdez, Jemimah Ross, Lidan Zhao, Robert Sargis, Margaret R Bell. Effects of Early Life Exposure to PFAS on Adolescent Neuroimmune Activity. *The Toxicologist*, abstract submitted for 2026.
+<details>
+  <summary>Wet lab and tissue skills</summary>
+  <p><strong>Molecular and cellular techniques:</strong> qPCR, RNA isolation, cDNA synthesis, primary cell culture, MACS cell separation, immunohistochemistry, immunocytochemistry.</p>
+  <p><strong>Animal and tissue work:</strong> in vivo chemical exposure, perfusion, targeted tissue collection, multi organ tissue collection, cryostat sectioning.</p>
+  <p><strong>Imaging and analysis:</strong> confocal microscopy, ImageJ, cell quantification, figure preparation.</p>
+</details>
 
-* Gia M Valdez, Jennifer Dinh, Margaret R Bell. Gestational exposure to polychlorinated biphenyls alters adolescent neuroimmune responses to ethanol challenge in the limbic system. *The Toxicologist*, Abstract 4654, 2025.
+<details>
+  <summary>Programming languages and computational tools</summary>
+  <p>I most often use R and Python for data analysis, visualization, and RNA seq interpretation. I also use Jupyter Notebooks, SQL, GraphPad Prism, SPSS, and Jamovi.</p>
+  <p>I like computational work most when it stays close to the biology: checking model outputs, asking whether pathway results make biological sense, and turning complicated data into figures that collaborators can actually use.</p>
+</details>
 
-* Gia M Valdez, Jemimah N Ross, Carissa E Dressel, Margaret R Bell. Effects of early life environmental contaminant exposure on hypothalamic responses to acute alcohol challenge in adolescence. Society for Neuroscience, 2024.
+<details>
+  <summary>Honors and awards</summary>
+  <ul>
+    <li>Neuroscience Scholars Program Associate, Society for Neuroscience, 2024 to present</li>
+    <li>Graduate Research Fund recipient, DePaul University, 2024</li>
+    <li>Master's Undergraduate Scholarly Engagement Award, DePaul University, 2024</li>
+    <li>Perry J. Gehring Diversity Student Travel Award, Society of Toxicology, 2024</li>
+    <li>Undergraduate Diversity Travel Award, Society of Toxicology, 2023</li>
+    <li>Organization for the Study of Sex Differences Undergraduate Attendee Award, 2023</li>
+    <li>DOORS Scholarship recipient, Promega and BTCI Institute, 2022</li>
+  </ul>
+</details>
 
-<hr class="section-rule">
-
-## Teaching And Mentorship
-
-At DePaul, I have taught and supported students in genetics, cell biology, physiology, anatomy, and summer research programming. I have also mentored undergraduate researchers through projects involving data interpretation, Python and R model outputs, and scientific presentations.
-
-<hr class="section-rule">
-
-## Skills
-
-**Molecular and cellular techniques:** qPCR, RNA isolation, cDNA synthesis, primary cell culture, MACS cell separation, immunohistochemistry, immunocytochemistry  
-**Animal and tissue work:** in vivo chemical exposure, perfusion, targeted tissue collection, multi organ tissue collection, cryostat sectioning  
-**Imaging and analysis:** confocal microscopy, ImageJ, cell quantification, figure preparation  
-**Computational skills:** R, Python, Jupyter Notebooks, SQL, GraphPad Prism, SPSS, Jamovi  
-**Languages:** conversational Japanese, French, and Spanish
-
-<hr class="section-rule">
-
-## Honors And Awards
-
-* Neuroscience Scholars Program Associate, Society for Neuroscience, 2024 to present
-* Graduate Research Fund recipient, DePaul University, 2024
-* Master's Undergraduate Scholarly Engagement Award, DePaul University, 2024
-* Perry J. Gehring Diversity Student Travel Award, Society of Toxicology, 2024
-* Undergraduate Diversity Travel Award, Society of Toxicology, 2023
-* Organization for the Study of Sex Differences Undergraduate Attendee Award, 2023
-* DOORS Scholarship recipient, Promega and BTCI Institute, 2022
+<details id="cats">
+  <summary>My cats</summary>
+  <p>Cat section coming soon. This is where I can add their names, photos, and any deeply important personality notes.</p>
+</details>
 
 <hr class="section-rule">
 
 ## Contact
 
-Email: gvaldez9 [at] depaul [dot] edu <span class="copy-status" id="copy-status"></span>  
+Email: gvaldez9 [at] depaul [dot] edu  
 GitHub: [GVALDEZ9](https://github.com/GVALDEZ9)
 
 Last updated: June 8, 2026
 
 <script>
-const copyButton = document.getElementById("copy-email");
-const copyStatus = document.getElementById("copy-status");
-if (copyButton && copyStatus) {
-  copyButton.addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText("gvaldez9@depaul.edu");
-      copyStatus.textContent = "copied";
-      setTimeout(() => { copyStatus.textContent = ""; }, 1800);
-    } catch (error) {
-      copyStatus.textContent = "email: gvaldez9@depaul.edu";
-    }
-  });
-}
-
 const themeButton = document.getElementById("theme-toggle");
 if (themeButton) {
   const savedTheme = localStorage.getItem("gia-theme");
