@@ -94,10 +94,6 @@ body.gia-dark {
   border-color: var(--gia-accent);
   box-shadow: inset 0 0 0 1px var(--gia-accent);
 }
-.quick-links button#surprise-button,
-.quick-links button#cat-button {
-  border-color: color-mix(in srgb, var(--gia-warm) 38%, var(--gia-line));
-}
 .intro-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(330px, 0.95fr);
@@ -116,25 +112,6 @@ body.gia-dark {
 }
 .intro-copy p:last-child {
   margin-bottom: 0;
-}
-.jump-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0.8rem 0 1.1rem;
-}
-.jump-row button {
-  border: 1px solid var(--gia-line);
-  border-radius: 999px;
-  padding: 0.32rem 0.65rem;
-  color: var(--gia-ink);
-  background: var(--gia-soft);
-  font: inherit;
-  cursor: pointer;
-}
-.jump-row button:hover {
-  border-color: var(--gia-accent);
-  color: var(--gia-accent);
 }
 .site-photo {
   margin: 0;
@@ -180,74 +157,228 @@ body.gia-dark {
 .mini-card span {
   color: var(--gia-muted);
 }
-.curiosity-board {
+.theme-lab {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+  grid-template-columns: 260px minmax(0, 1fr);
   gap: 1rem;
-  align-items: stretch;
-  margin: 1rem 0 1.45rem;
+  margin: 1.1rem 0 1.6rem;
 }
-.field-note {
+.theme-menu,
+.theme-panel {
   border: 1px solid var(--gia-line);
   border-radius: 10px;
-  padding: 1rem;
   background: var(--gia-soft);
 }
-.field-note strong {
-  display: block;
-  margin-bottom: 0.35rem;
+.theme-menu {
+  padding: 0.8rem;
 }
-.field-note p {
+.theme-menu strong {
+  display: block;
+  margin: 0.1rem 0 0.6rem;
+}
+.theme-menu p {
+  color: var(--gia-muted);
+  font-size: 0.92rem;
   margin: 0;
 }
-.research-map {
-  position: relative;
-  min-height: 230px;
+.theme-button,
+.theme-action {
+  width: 100%;
+  text-align: left;
   border: 1px solid var(--gia-line);
-  border-radius: 10px;
-  background:
-    radial-gradient(circle at 25% 30%, color-mix(in srgb, var(--gia-accent) 14%, transparent), transparent 32%),
-    radial-gradient(circle at 72% 68%, color-mix(in srgb, var(--gia-warm) 13%, transparent), transparent 35%),
-    var(--gia-bg);
-  overflow: hidden;
-}
-.research-map::before,
-.research-map::after {
-  content: "";
-  position: absolute;
-  inset: 22%;
-  border: 1px solid color-mix(in srgb, var(--gia-line) 72%, transparent);
-  border-radius: 999px;
-  transform: rotate(-12deg);
-}
-.research-map::after {
-  inset: 35%;
-  transform: rotate(18deg);
-}
-.map-node {
-  position: absolute;
-  z-index: 1;
-  border: 1px solid var(--gia-line);
-  border-radius: 999px;
-  padding: 0.42rem 0.7rem;
+  border-radius: 8px;
+  padding: 0.55rem 0.65rem;
+  margin-top: 0.45rem;
   color: var(--gia-ink);
-  background: color-mix(in srgb, var(--gia-bg) 88%, transparent);
-  box-shadow: 0 10px 22px rgba(23, 32, 38, 0.1);
+  background: var(--gia-bg);
   cursor: pointer;
   font: inherit;
-  transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+  transition: transform 150ms ease, border-color 150ms ease, color 150ms ease;
 }
-.map-node:hover,
-.map-node.active-node {
-  transform: translateY(-3px) scale(1.03);
+.theme-button {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 0.55rem;
+}
+.theme-icon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border: 1px solid color-mix(in srgb, var(--gia-accent) 35%, var(--gia-line));
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--gia-accent) 8%, var(--gia-bg));
+}
+.theme-icon::before,
+.theme-icon::after {
+  content: "";
+  position: absolute;
+  border-color: var(--gia-accent);
+}
+.icon-exposure::before {
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--gia-accent);
+  border-radius: 50%;
+  left: 7px;
+  top: 7px;
+  box-shadow: 10px 0 0 -1px var(--gia-bg), 10px 0 0 0 var(--gia-accent), 5px 10px 0 -1px var(--gia-bg), 5px 10px 0 0 var(--gia-accent);
+}
+.icon-exposure::after {
+  width: 16px;
+  height: 1px;
+  left: 7px;
+  top: 14px;
+  background: var(--gia-accent);
+  transform: rotate(28deg);
+}
+.icon-microglia::before {
+  width: 8px;
+  height: 8px;
+  left: 10px;
+  top: 10px;
+  border-radius: 50%;
+  background: var(--gia-accent);
+}
+.icon-microglia::after {
+  width: 20px;
+  height: 20px;
+  left: 4px;
+  top: 4px;
+  border-top: 2px solid var(--gia-accent);
+  border-right: 2px solid var(--gia-accent);
+  border-radius: 50%;
+  transform: rotate(35deg);
+}
+.icon-window::before {
+  width: 18px;
+  height: 12px;
+  left: 5px;
+  top: 8px;
+  border: 1px solid var(--gia-accent);
+  border-radius: 2px;
+}
+.icon-window::after {
+  width: 1px;
+  height: 12px;
+  left: 14px;
+  top: 8px;
+  background: var(--gia-accent);
+  box-shadow: 5px 0 0 var(--gia-accent);
+}
+.icon-germline::before {
+  width: 18px;
+  height: 18px;
+  left: 5px;
+  top: 5px;
+  border-left: 2px solid var(--gia-accent);
+  border-right: 2px solid var(--gia-accent);
+  border-radius: 50%;
+  transform: rotate(35deg);
+}
+.icon-germline::after {
+  width: 16px;
+  height: 2px;
+  left: 6px;
+  top: 14px;
+  background: var(--gia-accent);
+  box-shadow: 0 -5px 0 color-mix(in srgb, var(--gia-accent) 65%, transparent), 0 5px 0 color-mix(in srgb, var(--gia-accent) 65%, transparent);
+  transform: rotate(-35deg);
+}
+.icon-rnaseq::before {
+  width: 20px;
+  height: 8px;
+  left: 4px;
+  top: 10px;
+  border-top: 2px solid var(--gia-accent);
+  border-radius: 50%;
+}
+.icon-rnaseq::after {
+  width: 18px;
+  height: 10px;
+  left: 5px;
+  top: 9px;
+  border-bottom: 2px solid var(--gia-warm);
+  border-radius: 50%;
+}
+.theme-button:hover,
+.theme-button.active-theme,
+.theme-action:hover {
+  transform: translateX(3px);
   border-color: var(--gia-accent);
   color: var(--gia-accent);
 }
-.node-pfas { top: 18%; left: 10%; }
-.node-microglia { top: 38%; left: 38%; }
-.node-sex { top: 15%; right: 10%; }
-.node-window { bottom: 18%; left: 18%; }
-.node-rnaseq { bottom: 17%; right: 12%; }
+.theme-action {
+  border-color: color-mix(in srgb, var(--gia-warm) 38%, var(--gia-line));
+}
+.theme-panel {
+  padding: 1.1rem 1.2rem;
+  min-height: 265px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--gia-accent) 9%, transparent), transparent 38%),
+    var(--gia-soft);
+}
+.theme-panel h2 {
+  margin: 0 0 0.2rem;
+}
+.theme-kicker {
+  color: var(--gia-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.65rem;
+}
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-top: 0.9rem;
+}
+.theme-stat {
+  border: 1px solid var(--gia-line);
+  border-radius: 8px;
+  padding: 0.7rem;
+  background: color-mix(in srgb, var(--gia-bg) 76%, transparent);
+}
+.theme-stat strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--gia-muted);
+  margin-bottom: 0.25rem;
+}
+.theme-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.9rem;
+}
+.theme-links button,
+.theme-links a {
+  border: 1px solid var(--gia-line);
+  border-radius: 999px;
+  padding: 0.34rem 0.65rem;
+  color: var(--gia-ink);
+  background: var(--gia-bg);
+  text-decoration: none;
+  cursor: pointer;
+  font: inherit;
+}
+.theme-links button:hover,
+.theme-links a:hover {
+  border-color: var(--gia-accent);
+  color: var(--gia-accent);
+}
+.section-action {
+  border: 1px solid var(--gia-line);
+  border-radius: 999px;
+  padding: 0.34rem 0.65rem;
+  color: var(--gia-ink);
+  background: var(--gia-soft);
+  cursor: pointer;
+  font: inherit;
+}
+.section-action:hover {
+  border-color: var(--gia-accent);
+  color: var(--gia-accent);
+}
 .flash-target {
   animation: flashTarget 900ms ease;
 }
@@ -314,20 +445,11 @@ section {
   .intro-grid {
     grid-template-columns: 1fr;
   }
-  .curiosity-board {
+  .theme-lab {
     grid-template-columns: 1fr;
   }
-  .research-map {
-    min-height: 320px;
-  }
-  .map-node {
-    position: static;
-    display: inline-block;
-    margin: 0.45rem;
-  }
-  .research-map::before,
-  .research-map::after {
-    display: none;
+  .theme-grid {
+    grid-template-columns: 1fr;
   }
   .card-grid,
   .details-grid,
@@ -356,11 +478,7 @@ Lab Manager, Bell Lab at DePaul University · Incoming Toxicology Ph.D. student 
     <span class="nav-label">Links</span>
     <a href="https://github.com/GVALDEZ9">GitHub</a>
     <a href="assets/Gia_Valdez_CV_2026.pdf">PDF CV</a>
-    <a href="cv.md">Text CV</a>
     <a href="mailto:gvaldez9@depaul.edu">Email</a>
-    <button type="button" id="surprise-button">Surprise me</button>
-    <button type="button" id="cat-button">Cat break</button>
-    <button type="button" id="details-toggle">Open all</button>
     <button type="button" id="theme-toggle">Dark mode</button>
   </div>
 </div>
@@ -368,8 +486,8 @@ Lab Manager, Bell Lab at DePaul University · Incoming Toxicology Ph.D. student 
 <div class="intro-grid">
   <div class="intro-copy">
     <h2>Hi there</h2>
-    <p>I study how environmental contaminants shape the brain and immune system during sensitive windows of development. I am especially interested in PFAS, PCBs, microglia, sex differences, and why early exposures can keep mattering long after the exposure window has passed.</p>
-    <p>I recently completed my M.S. in Biological Sciences at DePaul University. Right now, I am the lab manager for Dr. Margaret Bell's lab at DePaul and an incoming Toxicology Ph.D. student at the University of Rochester.</p>
+    <p>I study how environmental contaminants shape the brain and immune system during sensitive windows of development.</p>
+    <p>Right now, I am the lab manager for Dr. Margaret Bell's lab at DePaul and an incoming Toxicology Ph.D. student at the University of Rochester.</p>
   </div>
   <figure class="site-photo">
     <img src="assets/gia_pfas_presentation.jpg" alt="Gia Valdez with colleagues after her master's thesis defense">
@@ -384,25 +502,39 @@ Lab Manager, Bell Lab at DePaul University · Incoming Toxicology Ph.D. student 
   </div>
   <div class="mini-card">
     <strong>Research home</strong>
-    <span>Environmental toxicology, microglia, PFAS, PCBs, sex differences, and developmental windows.</span>
+    <span>PFAS, PCBs, microglia, sex differences, and developmental windows.</span>
   </div>
   <div class="mini-card">
     <strong>How I work</strong>
-    <span>Wet lab experiments paired with RNA seq, pathway analysis, and careful biological interpretation.</span>
+    <span>Wet lab experiments paired with RNA seq and biological interpretation.</span>
   </div>
 </div>
 
-<div class="curiosity-board" aria-label="Research map">
-  <div class="field-note">
-    <strong>Research map</strong>
-    <p id="curiosity-note">Pick a theme to see how I connect exposures, brain development, immune signaling, and computation.</p>
+<div class="theme-lab" aria-label="Focused research themes">
+  <div class="theme-menu">
+    <strong>Focus the page</strong>
+    <p>Choose a theme. The panel updates here.</p>
+    <button type="button" class="theme-button active-theme" data-theme="pfas"><span class="theme-icon icon-exposure" aria-hidden="true"></span><span>PFAS and PCBs</span></button>
+    <button type="button" class="theme-button" data-theme="microglia"><span class="theme-icon icon-microglia" aria-hidden="true"></span><span>Microglia, immune, endocrine</span></button>
+    <button type="button" class="theme-button" data-theme="windows"><span class="theme-icon icon-window" aria-hidden="true"></span><span>Critical windows</span></button>
+    <button type="button" class="theme-button" data-theme="germline"><span class="theme-icon icon-germline" aria-hidden="true"></span><span>Gametogenesis and EDCs</span></button>
+    <button type="button" class="theme-button" data-theme="rnaseq"><span class="theme-icon icon-rnaseq" aria-hidden="true"></span><span>RNA seq</span></button>
+    <button type="button" class="theme-action" id="surprise-button">Surprise me</button>
+    <button type="button" class="theme-action" id="cat-button">Cat break</button>
   </div>
-  <div class="research-map">
-    <button type="button" class="map-node node-pfas" data-open-detail="exposures" data-note="PFAS and PCBs are useful models for asking how long lasting chemicals interact with endocrine, immune, metabolic, and developmental systems.">PFAS and PCBs</button>
-    <button type="button" class="map-node node-microglia" data-open-detail="immune" data-note="Microglia are where a lot of my questions meet: immune challenge, brain development, sex differences, and prior exposure history.">Microglia</button>
-    <button type="button" class="map-node node-sex" data-open-detail="immune" data-note="Sex differences matter because the same exposure can change the magnitude, timing, or direction of a neuroimmune response.">Sex differences</button>
-    <button type="button" class="map-node node-window" data-open-detail="windows" data-note="I think a lot about timing: early life, adolescence, and reproductive development are not interchangeable exposure windows.">Developmental windows</button>
-    <button type="button" class="map-node node-rnaseq" data-open-detail="programming" data-note="I use R, Python, RNA seq, and pathway analysis to connect gene level results back to the biology collaborators actually care about.">RNA seq</button>
+  <div class="theme-panel" id="theme-panel">
+    <div class="theme-kicker" id="theme-kicker">Research theme</div>
+    <h2 id="theme-title">PFAS and PCBs</h2>
+    <p id="theme-body">I use contaminants to ask how exposure timing changes developmental risk across endocrine, immune, metabolic, and neural systems.</p>
+    <div class="theme-grid">
+      <div class="theme-stat"><strong>Question</strong><span id="theme-question">When does exposure matter most?</span></div>
+      <div class="theme-stat"><strong>Systems</strong><span id="theme-systems">Endocrine, immune, brain</span></div>
+      <div class="theme-stat"><strong>Tools</strong><span id="theme-tools">In vivo exposure, qPCR, RNA seq</span></div>
+    </div>
+    <div class="theme-links">
+      <button type="button" id="theme-more" data-open-detail="exposures">More on this</button>
+      <a href="assets/Gia_Valdez_CV_2026.pdf">Download CV</a>
+    </div>
   </div>
 </div>
 
@@ -415,13 +547,6 @@ Lab Manager, Bell Lab at DePaul University · Incoming Toxicology Ph.D. student 
 At DePaul, I study how early life exposure to environmental contaminants affects neuroimmune and neuroendocrine development. My master's thesis, **Early Life Exposure to PFAS Affects Adolescent Neuroimmune Activity**, investigated how developmental PFOS exposure changes neural and immune responses following an adolescent inflammatory challenge.
 
 I also manage and contribute to projects examining how perinatal PCB exposure affects neonatal and adolescent neuroimmune outcomes.
-
-<div class="jump-row" aria-label="Research topic shortcuts">
-  <button type="button" data-open-detail="exposures">PFAS and PCBs</button>
-  <button type="button" data-open-detail="immune">Microglia</button>
-  <button type="button" data-open-detail="windows">Developmental windows</button>
-  <button type="button" data-open-detail="programming">R and Python</button>
-</div>
 
 <div class="details-grid">
   <details open id="exposures">
@@ -474,6 +599,8 @@ I also manage and contribute to projects examining how perinatal PCB exposure af
 <section id="details">
 <h2>More About The Work</h2>
 </section>
+
+<p><button type="button" class="section-action" id="details-toggle">Open all CV sections</button> <a href="cv.md">Text CV</a></p>
 
 <div class="details-grid">
   <details id="publications">
@@ -568,7 +695,7 @@ const allDetails = Array.from(document.querySelectorAll("details"));
 function updateDetailsToggle() {
   if (!detailsToggle) return;
   const allOpen = allDetails.length > 0 && allDetails.every((item) => item.open);
-  detailsToggle.textContent = allOpen ? "Close all" : "Open all";
+  detailsToggle.textContent = allOpen ? "Close all CV sections" : "Open all CV sections";
 }
 if (detailsToggle) {
   detailsToggle.addEventListener("click", () => {
@@ -585,13 +712,6 @@ if (detailsToggle) {
 document.querySelectorAll("[data-open-detail]").forEach((button) => {
   button.addEventListener("click", () => {
     const target = document.getElementById(button.dataset.openDetail);
-    const note = document.getElementById("curiosity-note");
-    document.querySelectorAll(".map-node").forEach((node) => {
-      node.classList.toggle("active-node", node === button);
-    });
-    if (note && button.dataset.note) {
-      note.textContent = button.dataset.note;
-    }
     if (target) {
       target.open = true;
       target.classList.remove("flash-target");
@@ -602,12 +722,92 @@ document.querySelectorAll("[data-open-detail]").forEach((button) => {
   });
 });
 
+const themeData = {
+  pfas: {
+    kicker: "Exposure biology",
+    title: "PFAS and PCBs",
+    body: "I use contaminants to ask how exposure timing changes developmental risk across endocrine, immune, metabolic, and neural systems.",
+    question: "When does exposure matter most?",
+    systems: "Endocrine, immune, brain",
+    tools: "In vivo exposure, qPCR, RNA seq",
+    detail: "exposures"
+  },
+  microglia: {
+    kicker: "Neuroimmune and endocrine crosstalk",
+    title: "Microglia, immune, endocrine",
+    body: "I am interested in how immune signaling, microglia, and endocrine disruption intersect during brain development.",
+    question: "How does exposure change response?",
+    systems: "Microglia, cytokines, hormones",
+    tools: "MACS, qPCR, RNA isolation",
+    detail: "immune"
+  },
+  windows: {
+    kicker: "Timing",
+    title: "Critical windows",
+    body: "Exposure effects depend on timing. Early life, adolescence, and reproductive development can each open different vulnerabilities.",
+    question: "Which window leaves a trace?",
+    systems: "Early life, adolescence, reproduction",
+    tools: "Exposure timing, tissue collection, qPCR",
+    detail: "windows"
+  },
+  germline: {
+    kicker: "Endocrine disruption across generations",
+    title: "Gametogenesis and EDCs",
+    body: "I am curious about how contaminants may affect reproductive development, gamete formation, and biological risk before the next generation begins.",
+    question: "Can exposure alter future vulnerability?",
+    systems: "Gonads, gametes, endocrine signaling",
+    tools: "Developmental toxicology, epigenetic questions",
+    detail: "windows"
+  },
+  rnaseq: {
+    kicker: "Computation close to biology",
+    title: "RNA seq",
+    body: "I use computational work to make RNA seq results interpretable, testable, and biologically grounded.",
+    question: "What does the model mean biologically?",
+    systems: "Genes, pathways, transcriptional response",
+    tools: "R, Python, DESeq2, GSVA",
+    detail: "programming"
+  }
+};
+
+const themeButtons = Array.from(document.querySelectorAll(".theme-button"));
+const themeFields = {
+  kicker: document.getElementById("theme-kicker"),
+  title: document.getElementById("theme-title"),
+  body: document.getElementById("theme-body"),
+  question: document.getElementById("theme-question"),
+  systems: document.getElementById("theme-systems"),
+  tools: document.getElementById("theme-tools"),
+  more: document.getElementById("theme-more"),
+  panel: document.getElementById("theme-panel")
+};
+function setTheme(themeName) {
+  const theme = themeData[themeName];
+  if (!theme) return;
+  themeButtons.forEach((button) => {
+    button.classList.toggle("active-theme", button.dataset.theme === themeName);
+  });
+  themeFields.kicker.textContent = theme.kicker;
+  themeFields.title.textContent = theme.title;
+  themeFields.body.textContent = theme.body;
+  themeFields.question.textContent = theme.question;
+  themeFields.systems.textContent = theme.systems;
+  themeFields.tools.textContent = theme.tools;
+  themeFields.more.dataset.openDetail = theme.detail;
+  themeFields.panel.classList.remove("flash-target");
+  void themeFields.panel.offsetWidth;
+  themeFields.panel.classList.add("flash-target");
+}
+themeButtons.forEach((button) => {
+  button.addEventListener("click", () => setTheme(button.dataset.theme));
+});
+
 const surpriseButton = document.getElementById("surprise-button");
 if (surpriseButton) {
-  const surpriseTargets = Array.from(document.querySelectorAll(".map-node"));
+  const surpriseTargets = Object.keys(themeData);
   surpriseButton.addEventListener("click", () => {
     const target = surpriseTargets[Math.floor(Math.random() * surpriseTargets.length)];
-    if (target) target.click();
+    setTheme(target);
   });
 }
 
