@@ -8,6 +8,9 @@
   --gia-accent: #205f73;
   --gia-warm: #9a463f;
 }
+html {
+  scroll-behavior: smooth;
+}
 .site-header {
   display: none;
 }
@@ -47,6 +50,12 @@ body.gia-dark {
   background: var(--gia-bg);
   border-bottom: 1px solid var(--gia-line);
 }
+.quick-links .nav-label {
+  align-self: center;
+  color: var(--gia-muted);
+  font-size: 0.92rem;
+  padding-right: 0.1rem;
+}
 .quick-links a,
 .quick-links button {
   border: 1px solid var(--gia-line);
@@ -60,6 +69,29 @@ body.gia-dark {
 }
 .quick-links a:hover,
 .quick-links button:hover {
+  border-color: var(--gia-accent);
+  color: var(--gia-accent);
+}
+.quick-links a.active-section {
+  border-color: var(--gia-accent);
+  box-shadow: inset 0 0 0 1px var(--gia-accent);
+}
+.jump-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.8rem 0 1.1rem;
+}
+.jump-row button {
+  border: 1px solid var(--gia-line);
+  border-radius: 999px;
+  padding: 0.32rem 0.65rem;
+  color: var(--gia-ink);
+  background: var(--gia-soft);
+  font: inherit;
+  cursor: pointer;
+}
+.jump-row button:hover {
   border-color: var(--gia-accent);
   color: var(--gia-accent);
 }
@@ -116,6 +148,7 @@ details {
   padding: 0.85rem 1rem;
   margin: 0;
   background: var(--gia-soft);
+  scroll-margin-top: 5rem;
 }
 details.full-width {
   grid-column: 1 / -1;
@@ -151,6 +184,9 @@ summary:hover {
   border-top: 1px solid var(--gia-line);
   margin: 2rem 0 1.25rem;
 }
+section {
+  scroll-margin-top: 5rem;
+}
 @media (max-width: 760px) {
   .quick-links {
     position: static;
@@ -170,10 +206,18 @@ Lab Manager, Bell Lab at DePaul University · Incoming Toxicology Ph.D. student 
 </div>
 
 <div class="quick-links">
+  <span class="nav-label">Jump to</span>
+  <a class="page-link" href="#work">Research</a>
+  <a class="page-link" href="#education">Education</a>
+  <a class="page-link" href="#details">CV Details</a>
+  <a class="page-link" href="#cats">Cats</a>
+  <a class="page-link" href="#contact">Contact</a>
+  <span class="nav-label">Links</span>
   <a href="https://github.com/GVALDEZ9">GitHub</a>
   <a href="assets/Gia_Valdez_CV_2026.pdf">PDF CV</a>
   <a href="cv.md">Text CV</a>
   <a href="mailto:gvaldez9@depaul.edu">Email</a>
+  <button type="button" id="details-toggle">Open all</button>
   <button type="button" id="theme-toggle">Dark mode</button>
 </div>
 
@@ -209,29 +253,38 @@ I recently completed my M.S. in Biological Sciences at DePaul University. Right 
 
 <hr class="section-rule">
 
-## What I Work On
+<section id="work">
+<h2>What I Work On</h2>
+</section>
 
 At DePaul, I study how early life exposure to environmental contaminants affects neuroimmune and neuroendocrine development. My master's thesis, **Early Life Exposure to PFAS Affects Adolescent Neuroimmune Activity**, investigated how developmental PFOS exposure changes neural and immune responses following an adolescent inflammatory challenge.
 
 I also manage and contribute to projects examining how perinatal PCB exposure affects neonatal and adolescent neuroimmune outcomes.
 
+<div class="jump-row" aria-label="Research topic shortcuts">
+  <button type="button" data-open-detail="exposures">PFAS and PCBs</button>
+  <button type="button" data-open-detail="immune">Microglia</button>
+  <button type="button" data-open-detail="windows">Developmental windows</button>
+  <button type="button" data-open-detail="programming">R and Python</button>
+</div>
+
 <div class="details-grid">
-  <details open>
+  <details open id="exposures">
     <summary>Environmental exposures</summary>
     <p>I am interested in contaminants that do not act like simple one time toxic insults. PFAS, PCBs, and other endocrine disrupting chemicals can interact with hormonal, immune, metabolic, and developmental systems. For me, the important question is not only whether an exposure changes an outcome, but when the exposure happens and which biological system is most vulnerable at that time.</p>
   </details>
 
-  <details open>
+  <details open id="immune">
     <summary>Brain and immune signaling</summary>
     <p>Microglia sit at the center of many questions I care about. They respond to immune challenge, shape brain development, and can behave differently depending on sex, age, and prior exposure history. I am especially interested in how environmental contaminants change the way microglia respond when the immune system is challenged later in life.</p>
   </details>
 
-  <details>
+  <details id="windows">
     <summary>Developmental windows</summary>
     <p>Development is not one uniform window. Early life, adolescence, and reproductive development each have different vulnerabilities. I want to understand how exposure during one window can alter later neuroimmune or neuroendocrine responses, and whether some effects persist through epigenetic, reproductive, or long term immune mechanisms.</p>
   </details>
 
-  <details>
+  <details id="programming">
     <summary>Programming languages and computational tools</summary>
     <p>I most often use R and Python for data analysis, visualization, and RNA seq interpretation. I also use Jupyter Notebooks, SQL, GraphPad Prism, SPSS, and Jamovi.</p>
     <p>I like computational work most when it stays close to the biology: checking model outputs, asking whether pathway results make biological sense, and turning complicated data into figures that collaborators can actually use.</p>
@@ -240,7 +293,9 @@ I also manage and contribute to projects examining how perinatal PCB exposure af
 
 <hr class="section-rule">
 
-## Education And Experience
+<section id="education">
+<h2>Education And Experience</h2>
+</section>
 
 <div class="details-grid">
   <details open>
@@ -261,10 +316,12 @@ I also manage and contribute to projects examining how perinatal PCB exposure af
 
 <hr class="section-rule">
 
-## More About The Work
+<section id="details">
+<h2>More About The Work</h2>
+</section>
 
 <div class="details-grid">
-  <details>
+  <details id="publications">
     <summary>Selected publications and presentations</summary>
     <ul>
       <li>Gia M Valdez, Jennifer Dinh, Simone Rhodes, Margaret R Bell. Effects of acute alcohol on adolescent rat brain responses after gestational Polychlorinated Biphenyls exposure. In preparation, 2026.</li>
@@ -275,19 +332,19 @@ I also manage and contribute to projects examining how perinatal PCB exposure af
     </ul>
   </details>
 
-  <details>
+  <details id="teaching">
     <summary>Teaching and mentorship</summary>
     <p>At DePaul, I have taught and supported students in genetics, cell biology, physiology, anatomy, and summer research programming. I have also mentored undergraduate researchers through projects involving data interpretation, Python and R model outputs, and scientific presentations.</p>
   </details>
 
-  <details>
+  <details id="wetlab">
     <summary>Wet lab and tissue skills</summary>
     <p><strong>Molecular and cellular techniques:</strong> qPCR, RNA isolation, cDNA synthesis, primary cell culture, MACS cell separation, immunohistochemistry, immunocytochemistry.</p>
     <p><strong>Animal and tissue work:</strong> in vivo chemical exposure, perfusion, targeted tissue collection, multi organ tissue collection, cryostat sectioning.</p>
     <p><strong>Imaging and analysis:</strong> confocal microscopy, ImageJ, cell quantification, figure preparation.</p>
   </details>
 
-  <details>
+  <details id="awards">
     <summary>Honors and awards</summary>
     <ul>
       <li>Neuroscience Scholars Program Associate, Society for Neuroscience, 2024 to present</li>
@@ -303,7 +360,9 @@ I also manage and contribute to projects examining how perinatal PCB exposure af
 
 <hr class="section-rule">
 
-## Killian And Girasol
+<section id="cats">
+<h2>Killian And Girasol</h2>
+</section>
 
 This is the very serious non scientific section.
 
@@ -324,7 +383,9 @@ This is the very serious non scientific section.
 
 <hr class="section-rule">
 
-## Contact
+<section id="contact">
+<h2>Contact</h2>
+</section>
 
 Email: gvaldez9@depaul.edu  
 GitHub: [GVALDEZ9](https://github.com/GVALDEZ9)
@@ -346,4 +407,52 @@ if (themeButton) {
     themeButton.textContent = isDark ? "Light mode" : "Dark mode";
   });
 }
+
+const detailsToggle = document.getElementById("details-toggle");
+const allDetails = Array.from(document.querySelectorAll("details"));
+function updateDetailsToggle() {
+  if (!detailsToggle) return;
+  const allOpen = allDetails.length > 0 && allDetails.every((item) => item.open);
+  detailsToggle.textContent = allOpen ? "Close all" : "Open all";
+}
+if (detailsToggle) {
+  detailsToggle.addEventListener("click", () => {
+    const shouldOpen = !allDetails.every((item) => item.open);
+    allDetails.forEach((item) => {
+      item.open = shouldOpen;
+    });
+    updateDetailsToggle();
+  });
+  allDetails.forEach((item) => item.addEventListener("toggle", updateDetailsToggle));
+  updateDetailsToggle();
+}
+
+document.querySelectorAll("[data-open-detail]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const target = document.getElementById(button.dataset.openDetail);
+    if (target) {
+      target.open = true;
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  });
+});
+
+const navLinks = Array.from(document.querySelectorAll(".page-link"));
+const sections = navLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+function setActiveSection() {
+  let activeId = "";
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= 130) {
+      activeId = section.id;
+    }
+  });
+  navLinks.forEach((link) => {
+    link.classList.toggle("active-section", link.getAttribute("href") === `#${activeId}`);
+  });
+}
+window.addEventListener("scroll", setActiveSection, { passive: true });
+setActiveSection();
 </script>
