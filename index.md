@@ -284,7 +284,7 @@ Machine learning pipelines for bryophyte specimen image classification.
 
 ## Contact
 
-Email: gvaldez9 [at] depaul [dot] edu  
+Email: gvaldez9@depaul.edu  
 GitHub: [GVALDEZ9](https://github.com/GVALDEZ9)
 
 Last updated: June 8, 2026

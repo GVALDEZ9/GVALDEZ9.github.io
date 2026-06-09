@@ -2,7 +2,7 @@
 
 Incoming Toxicology Ph.D. student at the University of Rochester  
 Chicago, Illinois  
-gvaldez9 [at] depaul [dot] edu
+gvaldez9@depaul.edu
 
 [Home](index.md) | [PDF CV](assets/Gia_Valdez_CV_2026.pdf) | [GitHub](https://github.com/GVALDEZ9) | [Email](mailto:gvaldez9@depaul.edu)
 
