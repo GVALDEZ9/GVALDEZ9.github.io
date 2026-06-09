@@ -45,6 +45,66 @@ body.gia-dark {
   font-size: 1.08rem;
   margin-bottom: 1rem;
 }
+.science-banner {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 1.25rem;
+}
+.banner-tile {
+  position: relative;
+  min-height: 112px;
+  overflow: hidden;
+  border: 1px solid var(--gia-line);
+  border-radius: 10px;
+  padding: 0.9rem;
+  background: var(--gia-soft);
+}
+.banner-tile strong {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.banner-tile span {
+  position: relative;
+  z-index: 1;
+  color: var(--gia-muted);
+  font-size: 0.92rem;
+}
+.banner-tile::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: -44px;
+  bottom: -64px;
+  border-radius: 50%;
+  opacity: 0.42;
+}
+.banner-microglia::after {
+  background:
+    radial-gradient(circle, #5aa6b8 0 10%, transparent 11%),
+    conic-gradient(from 20deg, transparent 0 12%, #5aa6b8 13% 18%, transparent 19% 38%, #5aa6b8 39% 44%, transparent 45% 68%, #5aa6b8 69% 74%, transparent 75%);
+}
+.banner-endo::after {
+  background:
+    repeating-linear-gradient(135deg, #d88477 0 8px, transparent 8px 16px),
+    radial-gradient(circle, #d88477, transparent 62%);
+}
+.banner-window::after {
+  border-radius: 14px;
+  background:
+    linear-gradient(90deg, #6b9f7d 0 2px, transparent 2px 32px),
+    linear-gradient(#6b9f7d 0 2px, transparent 2px 32px);
+  background-size: 34px 34px;
+}
+.banner-germline::after {
+  background:
+    radial-gradient(circle at 35% 35%, #b784c5 0 8%, transparent 9%),
+    radial-gradient(circle at 62% 58%, #b784c5 0 8%, transparent 9%),
+    linear-gradient(130deg, transparent 37%, #b784c5 38% 42%, transparent 43%);
+}
 .quick-links {
   position: sticky;
   top: 0.6rem;
@@ -326,6 +386,9 @@ body.gia-dark {
   font-size: 0.9rem;
   margin-bottom: 0.65rem;
 }
+.theme-panel p {
+  max-width: 76ch;
+}
 .theme-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -445,6 +508,9 @@ section {
   .intro-grid {
     grid-template-columns: 1fr;
   }
+  .science-banner {
+    grid-template-columns: 1fr;
+  }
   .theme-lab {
     grid-template-columns: 1fr;
   }
@@ -463,6 +529,25 @@ section {
 
 <div class="hero-subtitle">
 Lab Manager, Bell Lab at DePaul University · Incoming Toxicology Ph.D. student at the University of Rochester · Environmental toxicology, neurodevelopment, and neuroimmune signaling
+</div>
+
+<div class="science-banner" aria-label="Research themes">
+  <div class="banner-tile banner-microglia">
+    <strong>Microglia and immune signaling</strong>
+    <span>How brain resident immune cells respond to exposure and challenge.</span>
+  </div>
+  <div class="banner-tile banner-endo">
+    <strong>Endocrine disruption</strong>
+    <span>How chemical exposures may intersect with hormonal systems.</span>
+  </div>
+  <div class="banner-tile banner-window">
+    <strong>Critical windows</strong>
+    <span>Why timing may shape risk across development.</span>
+  </div>
+  <div class="banner-tile banner-germline">
+    <strong>Gametogenesis and EDCs</strong>
+    <span>How reproductive development may carry exposure sensitivity.</span>
+  </div>
 </div>
 
 <div class="quick-links">
@@ -512,8 +597,8 @@ Lab Manager, Bell Lab at DePaul University · Incoming Toxicology Ph.D. student 
 
 <div class="theme-lab" aria-label="Focused research themes">
   <div class="theme-menu">
-    <strong>Focus the page</strong>
-    <p>Choose a theme. The panel updates here.</p>
+    <strong>Research directions</strong>
+    <p>Choose a theme to see the questions I am interested in pursuing.</p>
     <button type="button" class="theme-button active-theme" data-theme="pfas"><span class="theme-icon icon-exposure" aria-hidden="true"></span><span>PFAS and PCBs</span></button>
     <button type="button" class="theme-button" data-theme="microglia"><span class="theme-icon icon-microglia" aria-hidden="true"></span><span>Microglia, immune, endocrine</span></button>
     <button type="button" class="theme-button" data-theme="windows"><span class="theme-icon icon-window" aria-hidden="true"></span><span>Critical windows</span></button>
@@ -523,13 +608,13 @@ Lab Manager, Bell Lab at DePaul University · Incoming Toxicology Ph.D. student 
     <button type="button" class="theme-action" id="cat-button">Cat break</button>
   </div>
   <div class="theme-panel" id="theme-panel">
-    <div class="theme-kicker" id="theme-kicker">Research theme</div>
+    <div class="theme-kicker" id="theme-kicker">Working interest</div>
     <h2 id="theme-title">PFAS and PCBs</h2>
-    <p id="theme-body">I use contaminants to ask how exposure timing changes developmental risk across endocrine, immune, metabolic, and neural systems.</p>
+    <p id="theme-body">I am interested in how persistent and endocrine active contaminants may shape developmental risk across neural, immune, metabolic, and hormonal systems. A central question is whether exposure timing changes which systems remain vulnerable later in life.</p>
     <div class="theme-grid">
-      <div class="theme-stat"><strong>Question</strong><span id="theme-question">When does exposure matter most?</span></div>
-      <div class="theme-stat"><strong>Systems</strong><span id="theme-systems">Endocrine, immune, brain</span></div>
-      <div class="theme-stat"><strong>Tools</strong><span id="theme-tools">In vivo exposure, qPCR, RNA seq</span></div>
+      <div class="theme-stat"><strong>Working question</strong><span id="theme-question">How does timing shape later vulnerability?</span></div>
+      <div class="theme-stat"><strong>Biological context</strong><span id="theme-systems">Neural, immune, endocrine systems</span></div>
+      <div class="theme-stat"><strong>Approach</strong><span id="theme-tools">Exposure models, molecular assays, RNA seq</span></div>
     </div>
     <div class="theme-links">
       <button type="button" id="theme-more" data-open-detail="exposures">More on this</button>
@@ -724,45 +809,45 @@ document.querySelectorAll("[data-open-detail]").forEach((button) => {
 
 const themeData = {
   pfas: {
-    kicker: "Exposure biology",
+    kicker: "Working interest",
     title: "PFAS and PCBs",
-    body: "I use contaminants to ask how exposure timing changes developmental risk across endocrine, immune, metabolic, and neural systems.",
-    question: "When does exposure matter most?",
-    systems: "Endocrine, immune, brain",
-    tools: "In vivo exposure, qPCR, RNA seq",
+    body: "I am interested in how persistent and endocrine active contaminants may shape developmental risk across neural, immune, metabolic, and hormonal systems. A central question is whether exposure timing changes which systems remain vulnerable later in life.",
+    question: "How does timing shape later vulnerability?",
+    systems: "Neural, immune, endocrine systems",
+    tools: "Exposure models, molecular assays, RNA seq",
     detail: "exposures"
   },
   microglia: {
-    kicker: "Neuroimmune and endocrine crosstalk",
+    kicker: "Working interest",
     title: "Microglia, immune, endocrine",
-    body: "I am interested in how immune signaling, microglia, and endocrine disruption intersect during brain development.",
-    question: "How does exposure change response?",
+    body: "I want to understand how microglia respond to inflammatory challenge after early exposure, and how that response may intersect with endocrine signaling and sex specific biology.",
+    question: "Does early exposure alter later immune response?",
     systems: "Microglia, cytokines, hormones",
-    tools: "MACS, qPCR, RNA isolation",
+    tools: "Cell separation, qPCR, RNA isolation",
     detail: "immune"
   },
   windows: {
-    kicker: "Timing",
+    kicker: "Working interest",
     title: "Critical windows",
-    body: "Exposure effects depend on timing. Early life, adolescence, and reproductive development can each open different vulnerabilities.",
-    question: "Which window leaves a trace?",
+    body: "I am interested in how early life, adolescence, and reproductive development differ as windows of susceptibility. The goal is to ask when an exposure is most likely to redirect later physiology.",
+    question: "Which exposure window changes later outcomes?",
     systems: "Early life, adolescence, reproduction",
-    tools: "Exposure timing, tissue collection, qPCR",
+    tools: "Timed exposure, tissue collection, molecular endpoints",
     detail: "windows"
   },
   germline: {
-    kicker: "Endocrine disruption across generations",
+    kicker: "Working interest",
     title: "Gametogenesis and EDCs",
-    body: "I am curious about how contaminants may affect reproductive development, gamete formation, and biological risk before the next generation begins.",
-    question: "Can exposure alter future vulnerability?",
+    body: "I am curious about how endocrine disrupting chemicals may affect reproductive development and gamete formation. This is a future facing interest for thinking about exposure effects before conception.",
+    question: "Can exposure history shape reproductive vulnerability?",
     systems: "Gonads, gametes, endocrine signaling",
     tools: "Developmental toxicology, epigenetic questions",
     detail: "windows"
   },
   rnaseq: {
-    kicker: "Computation close to biology",
+    kicker: "Working interest",
     title: "RNA seq",
-    body: "I use computational work to make RNA seq results interpretable, testable, and biologically grounded.",
+    body: "I use computational analysis to make transcriptomic results interpretable and biologically grounded. I am especially interested in connecting gene level models with pathway, transcription factor, and cell biology context.",
     question: "What does the model mean biologically?",
     systems: "Genes, pathways, transcriptional response",
     tools: "R, Python, DESeq2, GSVA",
