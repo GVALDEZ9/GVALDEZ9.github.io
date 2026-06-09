@@ -1,8 +1,3 @@
-# Gia Valdez
-
-Incoming Toxicology Ph.D. student at the University of Rochester  
-Environmental toxicology, neurodevelopment, and neuroimmune signaling
-
 <style>
 :root {
   --gia-bg: #ffffff;
@@ -12,6 +7,9 @@ Environmental toxicology, neurodevelopment, and neuroimmune signaling
   --gia-soft: #f4f6f8;
   --gia-accent: #205f73;
   --gia-warm: #9a463f;
+}
+.site-header {
+  display: none;
 }
 body.gia-dark {
   --gia-bg: #101418;
@@ -24,9 +22,18 @@ body.gia-dark {
   background: var(--gia-bg);
   color: var(--gia-ink);
 }
-.quick-note {
+.page-content {
+  padding-top: 1.4rem;
+}
+.hero-name {
+  font-size: clamp(2.4rem, 8vw, 5.2rem);
+  line-height: 0.95;
+  margin: 0 0 0.7rem;
+}
+.hero-subtitle {
   color: var(--gia-muted);
-  margin-top: -0.25rem;
+  font-size: 1.08rem;
+  margin-bottom: 1rem;
 }
 .quick-links {
   position: sticky;
@@ -67,7 +74,8 @@ body.gia-dark {
   border-radius: 8px;
   box-shadow: 0 18px 42px rgba(23, 32, 38, 0.16);
 }
-.site-photo figcaption {
+.site-photo figcaption,
+.cat-card figcaption {
   color: var(--gia-muted);
   font-size: 0.92rem;
   margin-top: 0.45rem;
@@ -97,12 +105,20 @@ body.gia-dark {
 .mini-card span {
   color: var(--gia-muted);
 }
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
 details {
   border: 1px solid var(--gia-line);
   border-radius: 8px;
   padding: 0.85rem 1rem;
-  margin: 0.75rem 0;
+  margin: 0;
   background: var(--gia-soft);
+}
+details.full-width {
+  grid-column: 1 / -1;
 }
 summary {
   cursor: pointer;
@@ -110,6 +126,25 @@ summary {
 }
 summary:hover {
   color: var(--gia-accent);
+}
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 0.85rem;
+}
+.cat-card {
+  margin: 0;
+}
+.cat-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--gia-line);
+}
+.cat-card.portrait img {
+  aspect-ratio: 3 / 4;
 }
 .section-rule {
   border: 0;
@@ -120,19 +155,25 @@ summary:hover {
   .quick-links {
     position: static;
   }
-  .card-grid {
+  .card-grid,
+  .details-grid,
+  .cat-grid {
     grid-template-columns: 1fr;
   }
 }
 </style>
 
+<div class="hero-name">Gia Valdez</div>
+
+<div class="hero-subtitle">
+Lab Manager, Bell Lab at DePaul University · Incoming Toxicology Ph.D. student at the University of Rochester · Environmental toxicology, neurodevelopment, and neuroimmune signaling
+</div>
+
 <div class="quick-links">
-  <a href="cv.md">CV</a>
-  <a href="assets/Gia_Valdez_CV_2026.pdf">PDF CV</a>
   <a href="https://github.com/GVALDEZ9">GitHub</a>
+  <a href="assets/Gia_Valdez_CV_2026.pdf">PDF CV</a>
+  <a href="cv.md">Text CV</a>
   <a href="mailto:gvaldez9@depaul.edu">Email</a>
-  <a href="#cats">My cats</a>
-  <a href="#cv-details">CV details</a>
   <button type="button" id="theme-toggle">Dark mode</button>
 </div>
 
@@ -140,16 +181,12 @@ summary:hover {
 
 I am Gia. I study how environmental contaminants shape the brain and immune system during sensitive windows of development. I am especially interested in PFAS, PCBs, microglia, sex differences, and why early exposures can keep mattering long after the exposure window has passed.
 
-I recently completed my M.S. in Biological Sciences at DePaul University. I am currently the lab manager for Dr. Margaret Bell's lab at DePaul and an incoming Toxicology Ph.D. student at the University of Rochester.
+I recently completed my M.S. in Biological Sciences at DePaul University. Right now, I am the lab manager for Dr. Margaret Bell's lab at DePaul and an incoming Toxicology Ph.D. student at the University of Rochester.
 
 <figure class="site-photo">
   <img src="assets/gia_pfas_presentation.jpg" alt="Gia Valdez with colleagues after her master's thesis defense">
   <figcaption>After my master's thesis defense on early life PFAS exposure and the adolescent brain.</figcaption>
 </figure>
-
-<div class="info-box">
-  <strong>Current scientific obsession:</strong> how developmental PFOS exposure changes the adolescent microglial response to inflammatory challenge, especially the IFN and neuroimmune signaling programs that may differ by sex.
-</div>
 
 <div class="card-grid">
   <div class="mini-card">
@@ -161,124 +198,129 @@ I recently completed my M.S. in Biological Sciences at DePaul University. I am c
     <span>Environmental toxicology, microglia, PFAS, PCBs, sex differences, and developmental windows.</span>
   </div>
   <div class="mini-card">
-    <strong>Methods I like</strong>
+    <strong>How I work</strong>
     <span>Wet lab experiments paired with RNA seq, pathway analysis, and careful biological interpretation.</span>
   </div>
 </div>
 
+<div class="info-box">
+  <strong>Current scientific obsession:</strong> how developmental PFOS exposure changes the adolescent microglial response to inflammatory challenge, especially the IFN and neuroimmune signaling programs that may differ by sex.
+</div>
+
 <hr class="section-rule">
 
-## Research
+## What I Work On
 
-At DePaul, I study how early life exposure to environmental contaminants affects neuroimmune and neuroendocrine development.
-
-My master's thesis, **Early Life Exposure to PFAS Affects Adolescent Neuroimmune Activity**, investigates how developmental PFOS exposure changes neural and immune responses following an adolescent inflammatory challenge. This work includes in vivo exposure models, tissue collection, microglial cell separation, RNA isolation, qPCR, RNA seq processing, and computational analysis.
+At DePaul, I study how early life exposure to environmental contaminants affects neuroimmune and neuroendocrine development. My master's thesis, **Early Life Exposure to PFAS Affects Adolescent Neuroimmune Activity**, investigated how developmental PFOS exposure changes neural and immune responses following an adolescent inflammatory challenge.
 
 I also manage and contribute to projects examining how perinatal PCB exposure affects neonatal and adolescent neuroimmune outcomes.
 
-### Things I think about a lot
+<div class="details-grid">
+  <details open>
+    <summary>Environmental exposures</summary>
+    <p>I am interested in contaminants that do not act like simple one time toxic insults. PFAS, PCBs, and other endocrine disrupting chemicals can interact with hormonal, immune, metabolic, and developmental systems. For me, the important question is not only whether an exposure changes an outcome, but when the exposure happens and which biological system is most vulnerable at that time.</p>
+  </details>
 
-<details open>
-  <summary>Environmental exposures</summary>
-  <p>I am interested in contaminants that do not act like simple one time toxic insults. PFAS, PCBs, and other endocrine disrupting chemicals can interact with hormonal, immune, metabolic, and developmental systems. For me, the important question is not only whether an exposure changes an outcome, but when the exposure happens and which biological system is most vulnerable at that time.</p>
-</details>
+  <details open>
+    <summary>Brain and immune signaling</summary>
+    <p>Microglia sit at the center of many questions I care about. They respond to immune challenge, shape brain development, and can behave differently depending on sex, age, and prior exposure history. I am especially interested in how environmental contaminants change the way microglia respond when the immune system is challenged later in life.</p>
+  </details>
 
-<details>
-  <summary>Brain and immune signaling</summary>
-  <p>Microglia sit at the center of a lot of questions I care about. They respond to immune challenge, shape brain development, and can behave differently depending on sex, age, and prior exposure history. I am especially interested in how environmental contaminants change the way microglia respond when the immune system is challenged later in life.</p>
-</details>
+  <details>
+    <summary>Developmental windows</summary>
+    <p>Development is not one uniform window. Early life, adolescence, and reproductive development each have different vulnerabilities. I want to understand how exposure during one window can alter later neuroimmune or neuroendocrine responses, and whether some effects persist through epigenetic, reproductive, or long term immune mechanisms.</p>
+  </details>
 
-<details>
-  <summary>Developmental windows</summary>
-  <p>Development is not one uniform window. Early life, adolescence, and reproductive development each have different vulnerabilities. I want to understand how exposure during one window can alter later neuroimmune or neuroendocrine responses, and whether some effects persist through epigenetic, reproductive, or long term immune mechanisms.</p>
-</details>
-
-<hr class="section-rule">
-
-## Education
-
-**University of Rochester**  
-Ph.D. in Toxicology, incoming
-
-**DePaul University**  
-M.S. in Biological Sciences, expected 2025  
-Thesis Advisor: Dr. Margaret Bell  
-Thesis: *Early Life Exposure to PFAS Affects Adolescent Neuroimmune Activity*
-
-**DePaul University Honors College**  
-B.S. in Neuroscience and Psychology, 2023  
-Minors in Biology and Japanese Language
+  <details>
+    <summary>Programming languages and computational tools</summary>
+    <p>I most often use R and Python for data analysis, visualization, and RNA seq interpretation. I also use Jupyter Notebooks, SQL, GraphPad Prism, SPSS, and Jamovi.</p>
+    <p>I like computational work most when it stays close to the biology: checking model outputs, asking whether pathway results make biological sense, and turning complicated data into figures that collaborators can actually use.</p>
+  </details>
+</div>
 
 <hr class="section-rule">
 
-## Experience
+## Education And Experience
 
-**Lab Manager, Bell Lab, DePaul University**  
-2025 to present  
-Effects of early life perinatal PCB exposure on neonatal and adolescent neuroimmune and neuroendocrine endpoints.
+<div class="details-grid">
+  <details open>
+    <summary>Education</summary>
+    <p><strong>University of Rochester</strong><br>Ph.D. in Toxicology, incoming</p>
+    <p><strong>DePaul University</strong><br>M.S. in Biological Sciences<br>Thesis Advisor: Dr. Margaret Bell<br>Thesis: <em>Early Life Exposure to PFAS Affects Adolescent Neuroimmune Activity</em></p>
+    <p><strong>DePaul University Honors College</strong><br>B.S. in Neuroscience and Psychology, 2023<br>Minors in Biology and Japanese Language</p>
+  </details>
 
-**Graduate Research Assistant, Bell Lab, DePaul University**  
-2024 to present  
-Early life PFOS exposure and adolescent neural and neuroimmune responses following inflammatory challenge.
-
-**Undergraduate Research Assistant, Bell Lab, DePaul University**  
-2022 to 2024  
-Perinatal PCB exposure, adolescent ethanol challenge, and immediate early gene mapping.
-
-**Undergraduate Integrative Research Assistant, Field Museum**  
-2022 to 2024  
-Machine learning pipelines for bryophyte specimen image classification.
+  <details open>
+    <summary>Research experience</summary>
+    <p><strong>Lab Manager, Bell Lab, DePaul University</strong><br>2025 to present<br>Effects of early life perinatal PCB exposure on neonatal and adolescent neuroimmune and neuroendocrine endpoints.</p>
+    <p><strong>Graduate Research Assistant, Bell Lab, DePaul University</strong><br>2024 to present<br>Early life PFOS exposure and adolescent neural and neuroimmune responses following inflammatory challenge.</p>
+    <p><strong>Undergraduate Research Assistant, Bell Lab, DePaul University</strong><br>2022 to 2024<br>Perinatal PCB exposure, adolescent ethanol challenge, and immediate early gene mapping.</p>
+    <p><strong>Undergraduate Integrative Research Assistant, Field Museum</strong><br>2022 to 2024<br>Machine learning pipelines for bryophyte specimen image classification.</p>
+  </details>
+</div>
 
 <hr class="section-rule">
 
-## A Few More Things
+## More About The Work
 
-<details id="cv-details">
-  <summary>Selected publications and presentations</summary>
-  <ul>
-    <li>Gia M Valdez, Jennifer Dinh, Simone Rhodes, Margaret R Bell. Effects of acute alcohol on adolescent rat brain responses after gestational Polychlorinated Biphenyls exposure. In preparation, 2026.</li>
-    <li>Margaret R Bell, Katherine A Walker, Gia M Valdez, Carissa E Dressel. Advances and challenges in studying effects of EDCs on tissue resident macrophages in inflammation. <em>Journal of the Endocrine Society</em>, 2026. <a href="https://doi.org/10.1210/jendso/bvag044">https://doi.org/10.1210/jendso/bvag044</a></li>
-    <li>Gia M Valdez, Jemimah Ross, Lidan Zhao, Robert Sargis, Margaret R Bell. Effects of Early Life Exposure to PFAS on Adolescent Neuroimmune Activity. <em>The Toxicologist</em>, abstract submitted for 2026.</li>
-    <li>Gia M Valdez, Jennifer Dinh, Margaret R Bell. Gestational exposure to polychlorinated biphenyls alters adolescent neuroimmune responses to ethanol challenge in the limbic system. <em>The Toxicologist</em>, Abstract 4654, 2025.</li>
-    <li>Gia M Valdez, Jemimah N Ross, Carissa E Dressel, Margaret R Bell. Effects of early life environmental contaminant exposure on hypothalamic responses to acute alcohol challenge in adolescence. Society for Neuroscience, 2024.</li>
-  </ul>
-</details>
+<div class="details-grid">
+  <details>
+    <summary>Selected publications and presentations</summary>
+    <ul>
+      <li>Gia M Valdez, Jennifer Dinh, Simone Rhodes, Margaret R Bell. Effects of acute alcohol on adolescent rat brain responses after gestational Polychlorinated Biphenyls exposure. In preparation, 2026.</li>
+      <li>Margaret R Bell, Katherine A Walker, Gia M Valdez, Carissa E Dressel. Advances and challenges in studying effects of EDCs on tissue resident macrophages in inflammation. <em>Journal of the Endocrine Society</em>, 2026. <a href="https://doi.org/10.1210/jendso/bvag044">https://doi.org/10.1210/jendso/bvag044</a></li>
+      <li>Gia M Valdez, Jemimah Ross, Lidan Zhao, Robert Sargis, Margaret R Bell. Effects of Early Life Exposure to PFAS on Adolescent Neuroimmune Activity. <em>The Toxicologist</em>, abstract submitted for 2026.</li>
+      <li>Gia M Valdez, Jennifer Dinh, Margaret R Bell. Gestational exposure to polychlorinated biphenyls alters adolescent neuroimmune responses to ethanol challenge in the limbic system. <em>The Toxicologist</em>, Abstract 4654, 2025.</li>
+      <li>Gia M Valdez, Jemimah N Ross, Carissa E Dressel, Margaret R Bell. Effects of early life environmental contaminant exposure on hypothalamic responses to acute alcohol challenge in adolescence. Society for Neuroscience, 2024.</li>
+    </ul>
+  </details>
 
-<details>
-  <summary>Teaching and mentorship</summary>
-  <p>At DePaul, I have taught and supported students in genetics, cell biology, physiology, anatomy, and summer research programming. I have also mentored undergraduate researchers through projects involving data interpretation, Python and R model outputs, and scientific presentations.</p>
-</details>
+  <details>
+    <summary>Teaching and mentorship</summary>
+    <p>At DePaul, I have taught and supported students in genetics, cell biology, physiology, anatomy, and summer research programming. I have also mentored undergraduate researchers through projects involving data interpretation, Python and R model outputs, and scientific presentations.</p>
+  </details>
 
-<details>
-  <summary>Wet lab and tissue skills</summary>
-  <p><strong>Molecular and cellular techniques:</strong> qPCR, RNA isolation, cDNA synthesis, primary cell culture, MACS cell separation, immunohistochemistry, immunocytochemistry.</p>
-  <p><strong>Animal and tissue work:</strong> in vivo chemical exposure, perfusion, targeted tissue collection, multi organ tissue collection, cryostat sectioning.</p>
-  <p><strong>Imaging and analysis:</strong> confocal microscopy, ImageJ, cell quantification, figure preparation.</p>
-</details>
+  <details>
+    <summary>Wet lab and tissue skills</summary>
+    <p><strong>Molecular and cellular techniques:</strong> qPCR, RNA isolation, cDNA synthesis, primary cell culture, MACS cell separation, immunohistochemistry, immunocytochemistry.</p>
+    <p><strong>Animal and tissue work:</strong> in vivo chemical exposure, perfusion, targeted tissue collection, multi organ tissue collection, cryostat sectioning.</p>
+    <p><strong>Imaging and analysis:</strong> confocal microscopy, ImageJ, cell quantification, figure preparation.</p>
+  </details>
 
-<details>
-  <summary>Programming languages and computational tools</summary>
-  <p>I most often use R and Python for data analysis, visualization, and RNA seq interpretation. I also use Jupyter Notebooks, SQL, GraphPad Prism, SPSS, and Jamovi.</p>
-  <p>I like computational work most when it stays close to the biology: checking model outputs, asking whether pathway results make biological sense, and turning complicated data into figures that collaborators can actually use.</p>
-</details>
+  <details>
+    <summary>Honors and awards</summary>
+    <ul>
+      <li>Neuroscience Scholars Program Associate, Society for Neuroscience, 2024 to present</li>
+      <li>Graduate Research Fund recipient, DePaul University, 2024</li>
+      <li>Master's Undergraduate Scholarly Engagement Award, DePaul University, 2024</li>
+      <li>Perry J. Gehring Diversity Student Travel Award, Society of Toxicology, 2024</li>
+      <li>Undergraduate Diversity Travel Award, Society of Toxicology, 2023</li>
+      <li>Organization for the Study of Sex Differences Undergraduate Attendee Award, 2023</li>
+      <li>DOORS Scholarship recipient, Promega and BTCI Institute, 2022</li>
+    </ul>
+  </details>
+</div>
 
-<details>
-  <summary>Honors and awards</summary>
-  <ul>
-    <li>Neuroscience Scholars Program Associate, Society for Neuroscience, 2024 to present</li>
-    <li>Graduate Research Fund recipient, DePaul University, 2024</li>
-    <li>Master's Undergraduate Scholarly Engagement Award, DePaul University, 2024</li>
-    <li>Perry J. Gehring Diversity Student Travel Award, Society of Toxicology, 2024</li>
-    <li>Undergraduate Diversity Travel Award, Society of Toxicology, 2023</li>
-    <li>Organization for the Study of Sex Differences Undergraduate Attendee Award, 2023</li>
-    <li>DOORS Scholarship recipient, Promega and BTCI Institute, 2022</li>
-  </ul>
-</details>
+<hr class="section-rule">
 
-<details id="cats">
-  <summary>My cats</summary>
-  <p>Cat section coming soon. This is where I can add their names, photos, and any deeply important personality notes.</p>
-</details>
+## Killian And Girasol
+
+This is the very serious non scientific section.
+
+<div class="cat-grid">
+  <figure class="cat-card">
+    <img src="assets/killian.jpeg" alt="Killian, a gray and white cat sleeping">
+    <figcaption><strong>Killian.</strong> Gray and white. Professional napper.</figcaption>
+  </figure>
+  <figure class="cat-card">
+    <img src="assets/girasol.jpeg" alt="Girasol, an orange cat in a cardboard box">
+    <figcaption><strong>Girasol.</strong> Orange. Box enthusiast.</figcaption>
+  </figure>
+  <figure class="cat-card portrait">
+    <img src="assets/killian_girasol.jpeg" alt="Killian and Girasol sitting together">
+    <figcaption><strong>Together.</strong> A rare diplomatic summit.</figcaption>
+  </figure>
+</div>
 
 <hr class="section-rule">
 
