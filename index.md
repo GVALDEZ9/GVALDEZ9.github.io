@@ -25,11 +25,18 @@ body.gia-dark {
   background: var(--gia-bg);
   color: var(--gia-ink);
 }
+.wrapper {
+  max-width: min(1120px, calc(100% - 40px));
+}
 .page-content {
-  padding-top: 1.4rem;
+  padding-top: 1rem;
+}
+.post-content {
+  font-size: 1rem;
+  line-height: 1.65;
 }
 .hero-name {
-  font-size: clamp(2.4rem, 8vw, 5.2rem);
+  font-size: clamp(2.7rem, 7vw, 5.6rem);
   line-height: 0.95;
   margin: 0 0 0.7rem;
 }
@@ -40,27 +47,38 @@ body.gia-dark {
 }
 .quick-links {
   position: sticky;
-  top: 0;
+  top: 0.6rem;
   z-index: 5;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
-  margin: 1rem 0 1.35rem;
-  padding: 0.65rem 0;
-  background: var(--gia-bg);
-  border-bottom: 1px solid var(--gia-line);
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1rem 0 1.5rem;
+  padding: 0.7rem 0.85rem;
+  background: color-mix(in srgb, var(--gia-bg) 92%, transparent);
+  border: 1px solid var(--gia-line);
+  border-radius: 14px;
+  box-shadow: 0 14px 30px rgba(23, 32, 38, 0.08);
+  backdrop-filter: blur(12px);
+}
+.nav-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
 }
 .quick-links .nav-label {
   align-self: center;
   color: var(--gia-muted);
-  font-size: 0.92rem;
+  font-size: 0.84rem;
   padding-right: 0.1rem;
 }
 .quick-links a,
 .quick-links button {
   border: 1px solid var(--gia-line);
   border-radius: 999px;
-  padding: 0.38rem 0.72rem;
+  padding: 0.34rem 0.68rem;
   text-decoration: none;
   color: var(--gia-ink);
   background: var(--gia-soft);
@@ -75,6 +93,25 @@ body.gia-dark {
 .quick-links a.active-section {
   border-color: var(--gia-accent);
   box-shadow: inset 0 0 0 1px var(--gia-accent);
+}
+.intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(330px, 0.95fr);
+  gap: 1.3rem;
+  align-items: stretch;
+  margin: 1.2rem 0 1.35rem;
+}
+.intro-copy {
+  background: var(--gia-soft);
+  border: 1px solid var(--gia-line);
+  border-radius: 10px;
+  padding: 1.15rem 1.25rem;
+}
+.intro-copy h2 {
+  margin-top: 0;
+}
+.intro-copy p:last-child {
+  margin-bottom: 0;
 }
 .jump-row {
   display: flex;
@@ -96,11 +133,13 @@ body.gia-dark {
   color: var(--gia-accent);
 }
 .site-photo {
-  margin: 1.35rem 0 1.25rem;
+  margin: 0;
 }
 .site-photo img {
   width: 100%;
-  max-height: 560px;
+  height: 100%;
+  min-height: 360px;
+  max-height: 520px;
   object-fit: cover;
   object-position: center;
   border-radius: 8px;
@@ -111,12 +150,6 @@ body.gia-dark {
   color: var(--gia-muted);
   font-size: 0.92rem;
   margin-top: 0.45rem;
-}
-.info-box {
-  border-left: 4px solid var(--gia-accent);
-  background: var(--gia-soft);
-  padding: 0.95rem 1rem;
-  margin: 1.2rem 0;
 }
 .card-grid {
   display: grid;
@@ -190,6 +223,10 @@ section {
 @media (max-width: 760px) {
   .quick-links {
     position: static;
+    align-items: flex-start;
+  }
+  .intro-grid {
+    grid-template-columns: 1fr;
   }
   .card-grid,
   .details-grid,
@@ -206,31 +243,36 @@ Lab Manager, Bell Lab at DePaul University · Incoming Toxicology Ph.D. student 
 </div>
 
 <div class="quick-links">
-  <span class="nav-label">Jump to</span>
-  <a class="page-link" href="#work">Research</a>
-  <a class="page-link" href="#education">Education</a>
-  <a class="page-link" href="#details">CV Details</a>
-  <a class="page-link" href="#cats">Cats</a>
-  <a class="page-link" href="#contact">Contact</a>
-  <span class="nav-label">Links</span>
-  <a href="https://github.com/GVALDEZ9">GitHub</a>
-  <a href="assets/Gia_Valdez_CV_2026.pdf">PDF CV</a>
-  <a href="cv.md">Text CV</a>
-  <a href="mailto:gvaldez9@depaul.edu">Email</a>
-  <button type="button" id="details-toggle">Open all</button>
-  <button type="button" id="theme-toggle">Dark mode</button>
+  <div class="nav-group" aria-label="Page sections">
+    <span class="nav-label">Jump to</span>
+    <a class="page-link" href="#work">Research</a>
+    <a class="page-link" href="#education">Education</a>
+    <a class="page-link" href="#details">CV Details</a>
+    <a class="page-link" href="#cats">Cats</a>
+    <a class="page-link" href="#contact">Contact</a>
+  </div>
+  <div class="nav-group" aria-label="Links and page controls">
+    <span class="nav-label">Links</span>
+    <a href="https://github.com/GVALDEZ9">GitHub</a>
+    <a href="assets/Gia_Valdez_CV_2026.pdf">PDF CV</a>
+    <a href="cv.md">Text CV</a>
+    <a href="mailto:gvaldez9@depaul.edu">Email</a>
+    <button type="button" id="details-toggle">Open all</button>
+    <button type="button" id="theme-toggle">Dark mode</button>
+  </div>
 </div>
 
-## Hi there
-
-I am Gia. I study how environmental contaminants shape the brain and immune system during sensitive windows of development. I am especially interested in PFAS, PCBs, microglia, sex differences, and why early exposures can keep mattering long after the exposure window has passed.
-
-I recently completed my M.S. in Biological Sciences at DePaul University. Right now, I am the lab manager for Dr. Margaret Bell's lab at DePaul and an incoming Toxicology Ph.D. student at the University of Rochester.
-
-<figure class="site-photo">
-  <img src="assets/gia_pfas_presentation.jpg" alt="Gia Valdez with colleagues after her master's thesis defense">
-  <figcaption>After my master's thesis defense on early life PFAS exposure and the adolescent brain.</figcaption>
-</figure>
+<div class="intro-grid">
+  <div class="intro-copy">
+    <h2>Hi there</h2>
+    <p>I study how environmental contaminants shape the brain and immune system during sensitive windows of development. I am especially interested in PFAS, PCBs, microglia, sex differences, and why early exposures can keep mattering long after the exposure window has passed.</p>
+    <p>I recently completed my M.S. in Biological Sciences at DePaul University. Right now, I am the lab manager for Dr. Margaret Bell's lab at DePaul and an incoming Toxicology Ph.D. student at the University of Rochester.</p>
+  </div>
+  <figure class="site-photo">
+    <img src="assets/gia_pfas_presentation.jpg" alt="Gia Valdez with colleagues after her master's thesis defense">
+    <figcaption>After my master's thesis defense on early life PFAS exposure and the adolescent brain.</figcaption>
+  </figure>
+</div>
 
 <div class="card-grid">
   <div class="mini-card">
@@ -245,10 +287,6 @@ I recently completed my M.S. in Biological Sciences at DePaul University. Right 
     <strong>How I work</strong>
     <span>Wet lab experiments paired with RNA seq, pathway analysis, and careful biological interpretation.</span>
   </div>
-</div>
-
-<div class="info-box">
-  <strong>Current scientific obsession:</strong> how developmental PFOS exposure changes the adolescent microglial response to inflammatory challenge, especially the IFN and neuroimmune signaling programs that may differ by sex.
 </div>
 
 <hr class="section-rule">
