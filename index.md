@@ -94,6 +94,10 @@ body.gia-dark {
   border-color: var(--gia-accent);
   box-shadow: inset 0 0 0 1px var(--gia-accent);
 }
+.quick-links button#surprise-button,
+.quick-links button#cat-button {
+  border-color: color-mix(in srgb, var(--gia-warm) 38%, var(--gia-line));
+}
 .intro-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(330px, 0.95fr);
@@ -162,6 +166,12 @@ body.gia-dark {
   border: 1px solid var(--gia-line);
   border-radius: 8px;
   padding: 0.9rem;
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+.mini-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gia-accent);
+  box-shadow: 0 12px 24px rgba(23, 32, 38, 0.08);
 }
 .mini-card strong {
   display: block;
@@ -169,6 +179,82 @@ body.gia-dark {
 }
 .mini-card span {
   color: var(--gia-muted);
+}
+.curiosity-board {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+  gap: 1rem;
+  align-items: stretch;
+  margin: 1rem 0 1.45rem;
+}
+.field-note {
+  border: 1px solid var(--gia-line);
+  border-radius: 10px;
+  padding: 1rem;
+  background: var(--gia-soft);
+}
+.field-note strong {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+.field-note p {
+  margin: 0;
+}
+.research-map {
+  position: relative;
+  min-height: 230px;
+  border: 1px solid var(--gia-line);
+  border-radius: 10px;
+  background:
+    radial-gradient(circle at 25% 30%, color-mix(in srgb, var(--gia-accent) 14%, transparent), transparent 32%),
+    radial-gradient(circle at 72% 68%, color-mix(in srgb, var(--gia-warm) 13%, transparent), transparent 35%),
+    var(--gia-bg);
+  overflow: hidden;
+}
+.research-map::before,
+.research-map::after {
+  content: "";
+  position: absolute;
+  inset: 22%;
+  border: 1px solid color-mix(in srgb, var(--gia-line) 72%, transparent);
+  border-radius: 999px;
+  transform: rotate(-12deg);
+}
+.research-map::after {
+  inset: 35%;
+  transform: rotate(18deg);
+}
+.map-node {
+  position: absolute;
+  z-index: 1;
+  border: 1px solid var(--gia-line);
+  border-radius: 999px;
+  padding: 0.42rem 0.7rem;
+  color: var(--gia-ink);
+  background: color-mix(in srgb, var(--gia-bg) 88%, transparent);
+  box-shadow: 0 10px 22px rgba(23, 32, 38, 0.1);
+  cursor: pointer;
+  font: inherit;
+  transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+.map-node:hover,
+.map-node.active-node {
+  transform: translateY(-3px) scale(1.03);
+  border-color: var(--gia-accent);
+  color: var(--gia-accent);
+}
+.node-pfas { top: 18%; left: 10%; }
+.node-microglia { top: 38%; left: 38%; }
+.node-sex { top: 15%; right: 10%; }
+.node-window { bottom: 18%; left: 18%; }
+.node-rnaseq { bottom: 17%; right: 12%; }
+.flash-target {
+  animation: flashTarget 900ms ease;
+}
+@keyframes flashTarget {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--gia-accent) 42%, transparent); }
+  45% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--gia-accent) 16%, transparent); }
+  100% { box-shadow: 0 0 0 0 transparent; }
 }
 .details-grid {
   display: grid;
@@ -228,6 +314,21 @@ section {
   .intro-grid {
     grid-template-columns: 1fr;
   }
+  .curiosity-board {
+    grid-template-columns: 1fr;
+  }
+  .research-map {
+    min-height: 320px;
+  }
+  .map-node {
+    position: static;
+    display: inline-block;
+    margin: 0.45rem;
+  }
+  .research-map::before,
+  .research-map::after {
+    display: none;
+  }
   .card-grid,
   .details-grid,
   .cat-grid {
@@ -257,6 +358,8 @@ Lab Manager, Bell Lab at DePaul University · Incoming Toxicology Ph.D. student 
     <a href="assets/Gia_Valdez_CV_2026.pdf">PDF CV</a>
     <a href="cv.md">Text CV</a>
     <a href="mailto:gvaldez9@depaul.edu">Email</a>
+    <button type="button" id="surprise-button">Surprise me</button>
+    <button type="button" id="cat-button">Cat break</button>
     <button type="button" id="details-toggle">Open all</button>
     <button type="button" id="theme-toggle">Dark mode</button>
   </div>
@@ -286,6 +389,20 @@ Lab Manager, Bell Lab at DePaul University · Incoming Toxicology Ph.D. student 
   <div class="mini-card">
     <strong>How I work</strong>
     <span>Wet lab experiments paired with RNA seq, pathway analysis, and careful biological interpretation.</span>
+  </div>
+</div>
+
+<div class="curiosity-board" aria-label="Research map">
+  <div class="field-note">
+    <strong>Research map</strong>
+    <p id="curiosity-note">Pick a theme to see how I connect exposures, brain development, immune signaling, and computation.</p>
+  </div>
+  <div class="research-map">
+    <button type="button" class="map-node node-pfas" data-open-detail="exposures" data-note="PFAS and PCBs are useful models for asking how long lasting chemicals interact with endocrine, immune, metabolic, and developmental systems.">PFAS and PCBs</button>
+    <button type="button" class="map-node node-microglia" data-open-detail="immune" data-note="Microglia are where a lot of my questions meet: immune challenge, brain development, sex differences, and prior exposure history.">Microglia</button>
+    <button type="button" class="map-node node-sex" data-open-detail="immune" data-note="Sex differences matter because the same exposure can change the magnitude, timing, or direction of a neuroimmune response.">Sex differences</button>
+    <button type="button" class="map-node node-window" data-open-detail="windows" data-note="I think a lot about timing: early life, adolescence, and reproductive development are not interchangeable exposure windows.">Developmental windows</button>
+    <button type="button" class="map-node node-rnaseq" data-open-detail="programming" data-note="I use R, Python, RNA seq, and pathway analysis to connect gene level results back to the biology collaborators actually care about.">RNA seq</button>
   </div>
 </div>
 
@@ -468,12 +585,39 @@ if (detailsToggle) {
 document.querySelectorAll("[data-open-detail]").forEach((button) => {
   button.addEventListener("click", () => {
     const target = document.getElementById(button.dataset.openDetail);
+    const note = document.getElementById("curiosity-note");
+    document.querySelectorAll(".map-node").forEach((node) => {
+      node.classList.toggle("active-node", node === button);
+    });
+    if (note && button.dataset.note) {
+      note.textContent = button.dataset.note;
+    }
     if (target) {
       target.open = true;
+      target.classList.remove("flash-target");
+      void target.offsetWidth;
+      target.classList.add("flash-target");
       target.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   });
 });
+
+const surpriseButton = document.getElementById("surprise-button");
+if (surpriseButton) {
+  const surpriseTargets = Array.from(document.querySelectorAll(".map-node"));
+  surpriseButton.addEventListener("click", () => {
+    const target = surpriseTargets[Math.floor(Math.random() * surpriseTargets.length)];
+    if (target) target.click();
+  });
+}
+
+const catButton = document.getElementById("cat-button");
+if (catButton) {
+  catButton.addEventListener("click", () => {
+    const cats = document.getElementById("cats");
+    if (cats) cats.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
 
 const navLinks = Array.from(document.querySelectorAll(".page-link"));
 const sections = navLinks
